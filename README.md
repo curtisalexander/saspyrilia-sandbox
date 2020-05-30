@@ -1,32 +1,9 @@
-# Setup
+# saspyrilia-sandboxes
 
-### Init
-```
-conda create --name pysandbox
-```
+Repository contains code used for testing examples at [saspyrilia.com](https://saspyrilia.com).
 
-### `environment.yml` init
+### Setup
+Perhaps of greater interest are the `README.md` files within each of the language directories.  They contain instructions for setting up isolated environments.
 
-Create an `environment.yml` file.
-
-### Add and Remove Dependencies
-
-Edit the `environment.yml` file.  Can be edited in simple manner or more complex manner.
-
-https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#updating-an-environment
-
-```
-conda env update pysandbox --file environment.yml --prune
-```
-
-### Identical Environment
-
-Export
-
-```
-conda list --explicit > spec-file.txt
-```
-
-
-
+Note that the setup instructions are my preferred way of working with environments.  There are obviously [multiple ways to skin a cat](https://en.wiktionary.org/wiki/there%27s_more_than_one_way_to_skin_a_cat).
 
