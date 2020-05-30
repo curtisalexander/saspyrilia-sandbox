@@ -4,7 +4,7 @@ Follow the instructions provided by SAS.
 
 https://www.sas.com/en_us/software/university-edition/download-software.html
 
-High level they require:
+In summary:
 - Downloading and installing [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - Downloading the SAS University Edition image (requires a SAS login)
 - Import the just downloaded image into VirtualBox
