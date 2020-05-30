@@ -1,6 +1,6 @@
 import pandas as pd
 
-foods = pd.DataFrame(
+person = pd.DataFrame(
     [
         ("Alice", "apple", "apple pie", 10),
         ("Balin", "banana", "bananas foster", 53),
@@ -9,5 +9,5 @@ foods = pd.DataFrame(
         ("Ezekiel", "elderberry", "elderberry tart", 4),
         ("Frances", "fig", "fig bars", 34),
     ],
-    columns=("name", "fruit_veg", "treat", "age"),
+    columns=("name", "fav_fruit_veg", "fav_treat", "age"),
 )
