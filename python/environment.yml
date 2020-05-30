@@ -1,0 +1,10 @@
+name: sandbox
+channels:
+  - defaults
+  - conda-forge
+prefix: ./envs
+dependencies:
+  - black
+  - pandas
+  - pylint
+
