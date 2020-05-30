@@ -15,6 +15,12 @@ git-tree-sha1 = "ecdec412a9abc8db54c0efc5548c64dfce072058"
 uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 version = "0.5.10"
 
+[[CSTParser]]
+deps = ["Tokenize"]
+git-tree-sha1 = "a2f9009a81b92d078a682d4a8576adc1f8176e90"
+uuid = "00ebfdb7-1f24-5e51-bd34-a7502290713f"
+version = "2.3.0"
+
 [[CSVFiles]]
 deps = ["CodecZlib", "DataValues", "FileIO", "HTTP", "IterableTables", "IteratorInterfaceExtensions", "TableShowUtils", "TableTraits", "TableTraitsUtils", "TextParse"]
 git-tree-sha1 = "96e5ca744988563da0b4dac199287e2790fdb5dd"
@@ -251,6 +257,12 @@ deps = ["BinaryProvider", "HTTP", "JSON"]
 git-tree-sha1 = "b0a7f9328967df5213691d318a03cf70ea8c76b1"
 uuid = "7d188eb4-7ad8-530c-ae41-71a32a6d4692"
 version = "0.2.0"
+
+[[JuliaFormatter]]
+deps = ["CSTParser", "DataStructures", "Pkg", "Test", "Tokenize"]
+git-tree-sha1 = "6bdccb610059ad5031cb6daadeaa646b77c6da35"
+uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
+version = "0.6.0"
 
 [[LibGit2]]
 deps = ["Printf"]
@@ -555,6 +567,11 @@ deps = ["Dates", "EzXML", "Mocking", "Printf", "RecipesBase", "Serialization", "
 git-tree-sha1 = "db7bc2051d4c2e5f336409224df81485c00de6cb"
 uuid = "f269a46b-ccf7-5d73-abea-4c690281aa53"
 version = "1.2.0"
+
+[[Tokenize]]
+git-tree-sha1 = "73c00ad506d88a7e8e4f90f48a70943101728227"
+uuid = "0796e94c-ce3b-5d07-9a54-7f471281c624"
+version = "0.5.8"
 
 [[TranscodingStreams]]
 deps = ["Random", "Test"]
