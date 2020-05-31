@@ -1,3 +1,5 @@
 [deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
 Queryverse = "612083be-0b0f-5412-89c1-4e7c75506a58"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
