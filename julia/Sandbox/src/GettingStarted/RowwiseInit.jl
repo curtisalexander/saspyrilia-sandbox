@@ -1,3 +1,5 @@
+module RowwiseInit
+
 using DataFrames
 
 person_data = [
@@ -6,10 +8,12 @@ person_data = [
     ("Cal", "carrot", "carrot cake", 34),
     ("Dara", "dates", "doughnut", 83),
     ("Ezekiel", "elderberry", "elderberry tart", 4),
-    ("Frances", "fig", "fig bars", 33)
+    ("Frances", "fig", "fig bars", 34)
 ]
 
 person = DataFrame(name = String[], fav_fruit_veg = String[], fav_treat = String[], age = Int[])
 for p in person_data
     push!(person, p)
 end
+
+end # module

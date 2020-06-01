@@ -1,0 +1,7 @@
+name = "Sandbox"
+uuid = "69879bf4-792c-49ee-b2d5-6b7cba730d08"
+authors = ["Curtis Alexander <calex@calex.org>"]
+version = "0.1.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
