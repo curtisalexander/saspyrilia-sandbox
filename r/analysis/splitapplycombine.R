@@ -1,3 +1,4 @@
+library(dplyr)
 library(tibble)
 
 person <- tibble::tribble(
@@ -9,3 +10,9 @@ person <- tibble::tribble(
   "Ezekiel", "elderberry", "elderberry tart", "no", 4,
   "Frances", "fig", "fig bars", "no", 34
 )
+
+sweet_tooth_by_age <- person %>%
+  group_by(sweet_tooth) %>%
+  summarise(age_cnt = n(),
+            age_mean = mean(age),
+            .groups = "keep")

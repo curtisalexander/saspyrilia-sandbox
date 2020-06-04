@@ -12,3 +12,24 @@ Ezekiel   elderberry          elderberry tart     no  4
 Frances   fig                 fig bars            no  34
 ;;;;
 run;
+
+* sql ;
+proc sql noprint;
+  create table sweet_tooth_avg_age as
+  select  sweet_tooth
+         ,count(age) as age_cnt
+         ,avg(age) as age_avg
+  from person
+  group by sweet_tooth
+  ;
+quit;
+
+
+* means ;
+proc means data=person nway noprint ;
+  class sweet_tooth ;
+  var age ;
+  output out=sweet_tooth_avg_age2(drop=_type_ rename=(_freq_=age_cnt))
+    mean=age_avg
+  ;
+run;

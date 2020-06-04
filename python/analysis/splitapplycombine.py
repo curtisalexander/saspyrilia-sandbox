@@ -12,4 +12,9 @@ person = pd.DataFrame(
     columns=("name", "fav_fruit_veg", "fav_treat", "sweet_tooth", "age"),
 )
 
-print(person)
+sweet_tooth_by_age = \
+    person.groupby("sweet_tooth") \
+        .agg(age_cnt=pd.NamedAgg(column="age", aggfunc="count"),
+             age_avg=pd.NamedAgg(column="age", aggfunc="mean"))
+
+print(sweet_tooth_by_age)
