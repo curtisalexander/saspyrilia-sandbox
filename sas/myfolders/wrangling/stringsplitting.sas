@@ -1,7 +1,7 @@
 * split string on comma returning first element ;
 data _null_;
   fruit_string = "apple, banana, carrot";
-  first_fruit = scan(fruit_string, 1, ",");
+  first_fruit = strip(scan(fruit_string, 1, ","));
 
   put fruit_string=;
   put first_fruit=;
@@ -13,7 +13,7 @@ data _null_;
   
   array fruits {3} $;
   do i = 1 to 3 ;
-  	fruits{i} = scan(fruit_string, i, ",");
+  	fruits{i} = strip(scan(fruit_string, i, ","));
   end;
 
   put fruit_string=;
