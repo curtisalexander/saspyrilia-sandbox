@@ -50,7 +50,7 @@ data sweet_tooth_older_ds2 ;
   if sweet_tooth="yes" and age > 20;
   
   * explicit ;
-  * if sweet_tooth="yes" then output;
+  * if sweet_tooth="yes" and age > 20 then output;
 run;
 
 * proc sql filtering ;
