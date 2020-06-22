@@ -19,9 +19,9 @@ sweet_tooth_q = @from i in person begin
 end
 
 
-########################
-## multiple condition ##
-########################
+#########################
+## multiple conditions ##
+#########################
 
 # Query - stand alone
 sweet_tooth_older_sa = person |>
