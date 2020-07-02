@@ -5,6 +5,8 @@ channels:
 prefix: ./envs
 dependencies:
   - black
+  - ipython
+  - jupyter
   - pandas
   - pylint
 
