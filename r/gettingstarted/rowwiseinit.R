@@ -1,7 +1,7 @@
 library(tibble)
 
 person <- tibble::tribble(
-  ~names, ~fav_fruit_veg, ~fav_treat, ~sweet_tooth, ~age,
+  ~name, ~fav_fruit_veg, ~fav_treat, ~sweet_tooth, ~age,
   "Alice", "apple", "apple pie", "yes", 10,
   "Balin", "banana", "bananas foster", "yes", 53,
   "Cal", "carrot", "carrot cake", "no", 34,
