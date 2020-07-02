@@ -1,5 +1,5 @@
 data person ;
-input name $10. fruit_veg $20. treat $20. sweet_tooth $3. age ;
+input name $10. fav_fruit_veg $20. fav_treat $20. sweet_tooth $3. age ;
 /*
 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7
 */
