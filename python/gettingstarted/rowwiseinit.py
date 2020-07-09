@@ -10,6 +10,12 @@ person = pd.DataFrame(
         ("Frances", "fig", "fig bars", "no", 34),
     ],
     columns=("name", "fav_fruit_veg", "fav_treat", "sweet_tooth", "age"),
-)
+).astype({
+    "name": "string",
+    "fav_fruit_veg": "string",
+    "fav_treat": "string",
+    "sweet_tooth": "string",
+    "age": "int"
+})
 
 print(person)
