@@ -1,6 +1,6 @@
 module DeriveColumns
 
-using DataFrames, Query, Statistics
+using DataFrames, Query
 
 #############################
 ## constant / static value ##
