@@ -4,11 +4,12 @@ import pandas as pd
 ## constant / static value ##
 #############################
 
+# new copy
+hungry = person.assign(hungry="yes")
+
 # in-place
 person["hungry"] = "yes"
 
-# new copy
-hungry = person.assign(hungry="yes")
 
 
 
