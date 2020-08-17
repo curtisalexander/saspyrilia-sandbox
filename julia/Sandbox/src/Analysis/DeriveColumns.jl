@@ -8,7 +8,9 @@ using DataFrames, Query
 
 # new copy
 # using Query - stand alone
-hungry = person |> @mutate(hungry = "yes") |> DataFrame
+hungry = person |>
+    @mutate(hungry = "yes") |>
+    DataFrame
 
 # in-place
 # using DataFrames
@@ -23,7 +25,7 @@ person[!, :hungry] .= "yes"
 # new copy
 # using Query - stand alone
 hungry_sa = person |>
-  @mutate(hungry = (_.sweet_tooth == "yes" && lowercase(_.name[1]) in ['a', 'e', 'i', 'o', 'u']) ? "yes" : "no")
+    @mutate(hungry = (_.sweet_tooth == "yes" && lowercase(_.name[1]) in ['a', 'e', 'i', 'o', 'u']) ? "yes" : "no")
 
 # new copy
 # using Query - LINQ
