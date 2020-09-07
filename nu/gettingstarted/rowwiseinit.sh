@@ -1,3 +1,5 @@
+# run in nushell
+
 echo [[name fav_fruit_veg fav_treat sweet_tooth age];
     ["Alice" "apple" "apple pie" "yes" 10]
     ["Balin" "banana" "bananas foster" "yes" 53]
