@@ -1,2 +1,4 @@
 .DS_Store
 .Rproj.user
+.ipython
+.ipynb_checkpoints
