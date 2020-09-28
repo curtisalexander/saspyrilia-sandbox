@@ -21,5 +21,7 @@ string_to_lower_and_ws_cleaned_up <- function(x) {
   tolower(x) %>% stringr::str_trim() %>% stringr::str_replace_all(" +", "_")
 }
 
+# apply
+# results in new dataframe rather than changing in place
 df_clean <- df %>%
   rename_cols(string_to_lower_and_ws_cleaned_up)
