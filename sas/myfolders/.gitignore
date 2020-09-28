@@ -4,4 +4,5 @@
 .sasstudio/
 .uestart/
 sasuser.v94/
-
+.ipynb_checkpoints/
+.ipython/
