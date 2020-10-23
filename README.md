@@ -1,4 +1,4 @@
-# saspyrilia-sandboxes
+# saspyrilia-sandbox
 
 Repository contains code used for testing examples at [saspyrilia.com](https://www.saspyrilia.com).
 
