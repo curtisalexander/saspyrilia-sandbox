@@ -46,14 +46,17 @@ RUN jupyter nbextension install --py sas_kernel.showSASLog && \
 
 USER $NB_UID
 
-COPY config/add-authinfo.sh /home/${NB_USER}
-COPY config/mv-sascfg.sh /home/${NB_USER}
-COPY config/sascfg_personal.py /home/${NB_USER}
+COPY docker-init/mv-sascfg.sh /home/${NB_USER}
+COPY docker-init/sascfg_personal.py /home/${NB_USER}
+COPY docker-init/update-authinfo.sh /home/${NB_USER}
+
+RUN echo 'oda user ODA_USER password ODA_PASSWORD' > /home/${NB_USER}/.authinfo && \
+    chmod 600 /home/${NB_USER}/.authinfo
 
 USER root
 
-RUN chmod +x /home/${NB_USER}/add-authinfo.sh
 RUN chmod +x /home/${NB_USER}/mv-sascfg.sh
+RUN chmod +x /home/${NB_USER}/update-authinfo.sh
 
 USER $NB_UID
 

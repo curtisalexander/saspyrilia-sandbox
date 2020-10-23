@@ -3,9 +3,19 @@
 Repository contains code used for testing examples at [saspyrilia.com](https://www.saspyrilia.com).
 
 ### Setup
+> NOTE: The below is outdated (as of **2020-10-23**) and will be updated with new instructions for using Docker.
+
 For details of setting up these respective environments, see the [Code Sandboxes](https://www.saspyrilia.com/blog/codesandboxes) post at [saspyrilia.com](https://www.saspyrilia.com).
 
 Note that the setup instructions are my preferred way of working with environments.  There is obviously [more than one way to skin a cat](https://en.wiktionary.org/wiki/there%27s_more_than_one_way_to_skin_a_cat).
+
+### Build
+Build a Docker image
+
+```
+docker build --tag saspyrilia-sandboxes .
+```
+
 
 ### Startup
 To startup, pass in the username and password for `ODA_USER` and `ODA_PASSWORD` and use the startup script.
