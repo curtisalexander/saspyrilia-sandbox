@@ -46,9 +46,9 @@ USER $NB_UID
 
 RUN mkdir -p /home/${NB_USER}/bin
 
-COPY --chown=${NB_USER}:users docker-init/mv-sascfg.sh /home/${NB_USER}/bin
-COPY --chown=${NB_USER}:users docker-init/sascfg_personal.py /home/${NB_USER}/bin
-COPY --chown=${NB_USER}:users docker-init/update-authinfo.sh /home/${NB_USER}/bin
+COPY --chown=${NB_USER}:users docker/mv-sascfg.sh /home/${NB_USER}/bin
+COPY --chown=${NB_USER}:users docker/sascfg_personal.py /home/${NB_USER}/bin
+COPY --chown=${NB_USER}:users docker/update-authinfo.sh /home/${NB_USER}/bin
 
 RUN chmod +x /home/${NB_USER}/bin/mv-sascfg.sh && \
     chmod +x /home/${NB_USER}/bin/update-authinfo.sh
