@@ -36,6 +36,7 @@ If interested in setting up a similar sandbox, the below describes the requireme
 Running `SAS` as built out in this repository requires creating an account on [SAS On Demand for Academics](https://www.sas.com/en_us/software/on-demand-for-academics.html).
 
 All SAS code is evaluated within SAS On Demand for Academics (SAS ODA).  Within a Jupyter notebook, code is sent to SAS ODA via the [saspy](https://sassoftware.github.io/saspy/index.html) library &mdash; a set of Python APIs for working with SAS.  [Instructions](https://support.sas.com/ondemand/saspy.html) for getting setup to utilize Jupyter and SAS ODA can be summarized as follows:
+- Install and setup [Java](https://adoptopenjdk.net/)
 - Create a `sascfg_personal.py` file and copy it to the appropriate location
 - Create an `authinfo` file containing the username and password for SAS ODA
 
