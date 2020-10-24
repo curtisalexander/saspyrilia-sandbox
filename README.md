@@ -63,7 +63,7 @@ Starting the Docker container is as simple as running the shell script [sandbox-
 ./sandbox-startup.sh
 ```
 
-This will startup a Jupyter notebook that one may access via their web browser at https://127.0.0.1:8
+This will startup a Jupyter notebook that one may access via their web browser at https://127.0.0.1:8888 with an ephemeral token.
 
 #### SAS, Python, R, and Julia
 In order to make use of SAS, one needs to pass in the username and password for SAS ODA.  As noted in [SAS Requirements](#sas-requirements), this is passed in via the `ODA_USER` and `ODA_PASSWORD` environment variables.  If these variables are set globally, then startup is the same as above.
@@ -81,11 +81,13 @@ If these variables are set per-run (my preference) then they may be passed in as
 >  ODA_USER=myusername ODA_PASSWORD=mypassword ./sandbox-startup.sh
 ```
 
+#### File Availability
+All files in the repository directory are bind mounted inside the container within `~/work`.  Thus any new notebooks created / modified underneath `~/work` will persist once the container is stopped.
+
 ### Usage
 
 ### Python, R, and Julia
 Using Python, R, and Julia is as simple as opening a notebook with the appropriate kernel!  All computation is performed locally.
-
 
 ### SAS
 As noted within [SAS Requirements](#sas-requirements), all computation actually takes place at SAS ODA.  Thus, one will need setup their `~/.authinfo` file to make the needed connection to SAS ODA.
