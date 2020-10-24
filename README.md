@@ -103,5 +103,5 @@ This is intentional!  In order to update the file, one may utilize the script [u
 Usage of `update-authinfo.sh` is as simple as running the following in the first cell within a notebook with the SAS kernel.
 
 ```
-!update-authinfo.sh
+!~/bin/update-authinfo.sh
 ```
