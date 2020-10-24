@@ -1,5 +1,7 @@
 # saspyrilia-sandbox
 
+![Publish Docker image](https://github.com/curtisalexander/saspyrilia-sandbox/workflows/Publish%20Docker%20image/badge.svg)
+
 Repository contains code examples used for testing content at [saspyrilia.com](https://www.saspyrilia.com).
 
 In addition, repository contains [Dockerfile](Dockerfile) to build a single Docker image that contains [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and kernels for all four principal programming languages featured on [saspyrilia.com](https://www.saspyrilia.com).
