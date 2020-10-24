@@ -1,5 +1,5 @@
 # Python, R, Julia
-FROM jupyter/datascience-notebook:45bfe5a474fa
+FROM jupyter/datascience-notebook:latest
 
 LABEL maintainer="Curtis Alexander <calex@calex.org>"
 
@@ -32,8 +32,6 @@ RUN conda install --quiet --yes \
     fix-permissions "/home/${NB_USER}" && \
     fix-permissions "${CONDA_DIR}/share/jupyter"
 
-RUN jupyter kernelspec list
-
 USER root
 
 RUN jupyter nbextension install --py sas_kernel.showSASLog && \
@@ -52,8 +50,8 @@ COPY --chown=${NB_USER}:users docker-init/mv-sascfg.sh /home/${NB_USER}/bin
 COPY --chown=${NB_USER}:users docker-init/sascfg_personal.py /home/${NB_USER}/bin
 COPY --chown=${NB_USER}:users docker-init/update-authinfo.sh /home/${NB_USER}/bin
 
-RUN chmod +x /home/${NB_USER}/bin/mv-sascfg.sh
-RUN chmod +x /home/${NB_USER}/bin/update-authinfo.sh
+RUN chmod +x /home/${NB_USER}/bin/mv-sascfg.sh && \
+    chmod +x /home/${NB_USER}/bin/update-authinfo.sh
 
 RUN echo 'oda user ODA_USER password ODA_PASSWORD' > /home/${NB_USER}/.authinfo && \
     chmod 600 /home/${NB_USER}/.authinfo
