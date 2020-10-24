@@ -30,6 +30,7 @@ Note that the setup instructions are my preferred way of working with environmen
 If interested in code examples, the directory structure should mirror the [docs](https://github.com/curtisalexander/saspyrilia/tree/main/docs) section of the [saspyrilia repo](https://github.com/curtisalexander/saspyrilia).
 
 ## Sandbox
+If interested in setting up a similar sandbox, the below describes the requirements for using with SAS, how to build the Docker image, how to run the Docker container, and a final caveat for working with SAS ODA within the container.
 
 ### SAS Requirements
 Running `SAS` as built out in this repository requires creating an account on [SAS On Demand for Academics](https://www.sas.com/en_us/software/on-demand-for-academics.html).
