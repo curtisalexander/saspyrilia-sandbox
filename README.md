@@ -82,7 +82,7 @@ If these variables are set per-run (my preference) then they may be passed in as
 ```
 
 #### File Availability
-All files in the repository directory are bind mounted inside the container within `~/work`.  Thus any new notebooks created / modified underneath `~/work` will persist once the container is stopped.
+All files in the repository directory are [bind mounted](https://docs.docker.com/storage/bind-mounts/) inside the container within `~/work`.  Thus any new notebooks created / modified underneath `~/work` will persist once the container is stopped.
 
 ### Usage
 
