@@ -52,6 +52,8 @@ The [Dockerfile](Dockerfile) is based on the [datascience-notebook](https://gith
 > **BEWARE:** This creates a rather large &mdash; 4GB+ &mdash; image!
 
 ### Docker Startup
+
+#### Python, R, and Julia 
 Starting the Docker container is as simple as running the shell script [sandbox-startup.sh](sandbox-startup.sh) in the root of this repository.
 
 ```sh
@@ -59,13 +61,36 @@ Starting the Docker container is as simple as running the shell script [sandbox-
 ```
 
 This will startup a Jupyter notebook that one may access via their web browser at https://127.0.0.1:8
-To startup the Docker container, pass in the username and password for `ODA_USER` and `ODA_PASSWORD` and use the startup script in this repository.
 
-> **NOTE:** There is a space in front of the command &mdash; this is purposeful!  This prevents the command from being saved in your shell's history.  Note that this works for both `bash` and `fish` shells.
+#### SAS, Python, R, and Julia
+In order to make use of SAS, one needs to pass in the username and password for SAS ODA.  As noted in [SAS Requirements](#sas-requirements), this is passed in via the `ODA_USER` and `ODA_PASSWORD` environment variables.  If these variables are set globally, then startup is the same as above.
 
 ```sh
- ODA_USER=myusername ODA_PASSWORD=mypassword ./sandbox-startup.sh
+./sandbox-startup.sh
 ```
 
-### Login
-In order to login to [SAS On Demand for Academics](https://www.sas.com/en_us/software/on-demand-for-academics.html), run the script `update-authinfo.sh` which updates the file `~/.authinfo` with the environment variables `ODA_USER` and `ODA_PASSWORD`.
+If these variables are set per-run (my preference) then they may be passed in as part of startup.
+
+> **NOTE:** There is a leading space in front of the command &mdash; this is purposeful!  This prevents the command from being saved in one's shell history.  Note that this works for both `bash` and `fish` shells.
+
+```sh
+# v--- There is a leading space here!
+>  ODA_USER=myusername ODA_PASSWORD=mypassword ./sandbox-startup.sh
+```
+
+### Usage
+
+### Python, R, and Julia
+Using Python, R, and Julia is as simple as opening a notebook with the appropriate kernel!  All computation is performed locally.
+
+
+### SAS
+As noted within [SAS Requirements](#sas-requirements), all computation actually takes place at SAS ODA.  Thus, one will need setup their `~/.authinfo` file to make the needed connection to SAS ODA.
+
+The `~/.authinfo` file within the container at startup contains the following.
+
+```
+oda user ODA_USER password ODA_PASSWORD
+```
+
+This is intentional!  In order to update the file, one may utilize the script [update-authinfo.sh](docker/update-authinfo.sh) that is copied into `~/bin/update-authinfo.sh` where `~/bin` is setup on the user's PATH.  The script simply replaces `ODA_USER` and `ODA_PASSWORD` with the environment variables of the same name.
