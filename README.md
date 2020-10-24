@@ -99,3 +99,9 @@ oda user ODA_USER password ODA_PASSWORD
 ```
 
 This is intentional!  In order to update the file, one may utilize the script [update-authinfo.sh](docker/update-authinfo.sh) that is copied into `~/bin/update-authinfo.sh` where `~/bin` is setup on the user's PATH.  The script simply replaces `ODA_USER` and `ODA_PASSWORD` with the environment variables of the same name.
+
+Usage of `update-authinfo.sh` is as simple as running the following in the first cell within a notebook with the SAS kernel.
+
+```
+!update-authinfo.sh
+```
