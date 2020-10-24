@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-NB_USER=jovyan
-NB_GROUP=users
-NB_UID=1000
-NB_GID=100
+NB_USER="jovyan"
+NB_GROUP="users"
+NB_UID="1000"
+NB_GID="100"
 
 docker run --rm \
            --name saspyrilia-sandbox \
