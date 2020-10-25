@@ -1,6 +1,6 @@
 # saspyrilia-sandbox
 
-![Publish Docker image](https://github.com/curtisalexander/saspyrilia-sandbox/workflows/Publish%20Docker%20image/badge.svg)
+![Docker](https://github.com/curtisalexander/saspyrilia-sandbox/workflows/Docker%20image/badge.svg)
 
 Repository contains code examples used for testing content at [saspyrilia.com](https://www.saspyrilia.com).
 
