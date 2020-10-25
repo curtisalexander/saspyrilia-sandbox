@@ -7,7 +7,7 @@ USER root
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Add AdoptOpenJDK JDK
+# Add AdoptOpenJDK for use with SAS IOM
 RUN buildDeps=' \
         gnupg \
         software-properties-common \
@@ -34,6 +34,7 @@ RUN conda install --quiet --yes \
 
 USER root
 
+# Add notebook extensions
 RUN jupyter nbextension install --py sas_kernel.showSASLog && \
     jupyter nbextension enable sas_kernel.showSASLog --py && \
     jupyter nbextension install --py sas_kernel.theme && \
@@ -44,6 +45,12 @@ RUN jupyter nbextension install --py sas_kernel.showSASLog && \
 
 USER $NB_UID
 
+# Add Julia packages
+RUN julia -e 'import Pkg; Pkg.update()' && \
+    julia -e "using Pkg; pkg\"add Queryverse\"; pkg\"precompile\"" && \
+    fix-permissions "${JULIA_PKGDIR}" "${CONDA_DIR}/share/jupyter"
+
+# Add scripts
 RUN mkdir -p /home/${NB_USER}/bin
 
 COPY --chown=${NB_USER}:users docker/mv-sascfg.sh /home/${NB_USER}/bin
