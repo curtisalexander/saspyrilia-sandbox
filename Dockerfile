@@ -3,6 +3,43 @@ FROM jupyter/datascience-notebook:latest
 
 LABEL maintainer="Curtis Alexander <calex@calex.org>"
 
+# .NET
+# FROM mcr.microsoft.com/dotnet/core/sdk:3.1-focal
+
+# USER $NB_UID
+
+# ENV PATH="/home/${NB_USER}/.dotnet/tools:${PATH}"
+
+# RUN dotnet tool install -g --add-source "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json" Microsoft.dotnet-interactive && \
+#     dotnet interactive jupyter install && \
+#     mv "${HOME}/.local/share/jupyter/kernels/.net"* "${CONDA_DIR}/share/jupyter/kernels/" && \
+#     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
+#     rm -rf "${HOME}/.local" && \
+#    fix-permissions "${CONDA_DIR}/share/jupyter"
+
+# Nushell
+# FROM quay.io/nushell/nu-base:latest as base
+# COPY --from=base /usr/local/bin/nu /usr/local/bin/nu
+
+# USER root
+
+# ENV DEBIAN_FRONTEND noninteractive
+
+# RUN apt-get update \
+#     && apt-get install -y --no-install-recommends libssl-dev pkg-config \
+#     && apt-get clean \
+#     && rm -fr /var/lib/apt/lists/*
+
+# USER $NB_UID
+
+# RUN git clone https://github.com/nushell/nu_jupyter.git && \
+#     cd nu_jupyter && \
+#     jupyter kernelspec install ../nu_jupyter --user && \
+#     mv "${HOME}/.local/share/jupyter/kernels/.net"* "${CONDA_DIR}/share/jupyter/kernels/" && \
+#     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
+#     rm -rf "${HOME}/.local" && \
+#     fix-permissions "${CONDA_DIR}/share/jupyter"
+
 USER root
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -14,11 +51,15 @@ RUN buildDeps=' \
     ' && \
     apt-get update && \
     apt-get install -y --no-install-recommends $buildDeps && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
     wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - && \
     rm -f /home/${NB_USER}/.wget-hsts && \
     add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
     apt-get install -y --no-install-recommends adoptopenjdk-11-hotspot && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Add SQLite
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends sqlite && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
@@ -47,7 +88,7 @@ USER $NB_UID
 
 # Add Julia packages
 RUN julia -e 'import Pkg; Pkg.update()' && \
-    julia -e "using Pkg; pkg\"add Queryverse\"; pkg\"precompile\"" && \
+    julia -e "using Pkg; pkg\"add Queryverse, DataFrames\"; pkg\"precompile\"" && \
     fix-permissions "${JULIA_PKGDIR}" "${CONDA_DIR}/share/jupyter"
 
 # Add scripts
