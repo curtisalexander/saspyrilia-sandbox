@@ -3,43 +3,6 @@ FROM jupyter/datascience-notebook:latest
 
 LABEL maintainer="Curtis Alexander <calex@calex.org>"
 
-# .NET
-# FROM mcr.microsoft.com/dotnet/core/sdk:3.1-focal
-
-# USER $NB_UID
-
-# ENV PATH="/home/${NB_USER}/.dotnet/tools:${PATH}"
-
-# RUN dotnet tool install -g --add-source "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json" Microsoft.dotnet-interactive && \
-#     dotnet interactive jupyter install && \
-#     mv "${HOME}/.local/share/jupyter/kernels/.net"* "${CONDA_DIR}/share/jupyter/kernels/" && \
-#     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
-#     rm -rf "${HOME}/.local" && \
-#    fix-permissions "${CONDA_DIR}/share/jupyter"
-
-# Nushell
-# FROM quay.io/nushell/nu-base:latest as base
-# COPY --from=base /usr/local/bin/nu /usr/local/bin/nu
-
-# USER root
-
-# ENV DEBIAN_FRONTEND noninteractive
-
-# RUN apt-get update \
-#     && apt-get install -y --no-install-recommends libssl-dev pkg-config \
-#     && apt-get clean \
-#     && rm -fr /var/lib/apt/lists/*
-
-# USER $NB_UID
-
-# RUN git clone https://github.com/nushell/nu_jupyter.git && \
-#     cd nu_jupyter && \
-#     jupyter kernelspec install ../nu_jupyter --user && \
-#     mv "${HOME}/.local/share/jupyter/kernels/.net"* "${CONDA_DIR}/share/jupyter/kernels/" && \
-#     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
-#     rm -rf "${HOME}/.local" && \
-#     fix-permissions "${CONDA_DIR}/share/jupyter"
-
 USER root
 
 ENV DEBIAN_FRONTEND noninteractive
