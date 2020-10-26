@@ -46,7 +46,7 @@ All SAS code is evaluated within SAS On Demand for Academics (SAS ODA).  Within 
 In order to prevent leaking secrets into the Docker container, the username and password values are expected to be passed into the Docker container via the `ODA_USER` and `ODA_PASSWORD` environment variables.  The environment variables may be set globally or on a per-run basis (my preference).
 
 ### Docker Build
-In order to build the Docker image, build from the [Dockerfile](Dockerfile).  Assuming one is in the `saspyrilia-sandbox` directory, run the following.
+In order to build the Docker image, utilize the repo [Dockerfile](Dockerfile).  Assuming one is in the `saspyrilia-sandbox` directory, run the following.
 
 ```
 docker build --tag saspyrilia-sandbox .
