@@ -31,6 +31,8 @@ Note that the setup instructions are my preferred way of working with environmen
 ## Code Examples
 If interested in code examples, the directory structure _**should**_ mirror the [docs](https://github.com/curtisalexander/saspyrilia/tree/main/docs) section of the [saspyrilia repo](https://github.com/curtisalexander/saspyrilia).
 
+> :memo: **NOTE:** Transition from individual `*.sas`, `*.py`, `*.r`, and `*.jl` files to Jupyter notebooks is not yet complete!  Over time all individual files will transition to notebooks.
+
 ## Sandbox
 If interested in setting up a similar sandbox, the below describes the requirements for using with SAS, how to build the Docker image, how to run the Docker container, and a final caveat for working with SAS ODA within the container.
 
