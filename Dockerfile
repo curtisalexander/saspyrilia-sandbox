@@ -29,8 +29,16 @@ USER $NB_UID
 
 # Add components for SAS
 RUN conda install --quiet --yes \
-    'saspy=3.5*' \
+    'saspy=3.6*' \
     'sas_kernel=2.3*' && \
+    conda clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}" && \
+    fix-permissions "${CONDA_DIR}/share/jupyter"
+
+# Add components for Python
+RUN conda install --quiet --yes \
+    'pyreadstat' && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}" && \
