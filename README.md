@@ -15,6 +15,7 @@ Over time will _consider_ adding other kernels for other languages.
   - C#
   - F#
   - PowerShell
+- [Dyalog APL](https://github.com/Dyalog/dyalog-jupyter-kernel)
 - [Nushell](https://github.com/nushell/nu_jupyter)
 - [Rust](https://github.com/google/evcxr)  
 
